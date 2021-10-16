@@ -21,8 +21,8 @@ PAGE_NO = 1
 
 
 class MirrorStatus:
-    STATUS_UPLOADING = "ᴜᴘʟᴏᴀᴅɪɴɢ...📤"
-    STATUS_DOWNLOADING = "ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...📥"
+    STATUS_UPLOADING = "ᴜᴘʟᴏᴀᴅɪɴɢ...⏫"
+    STATUS_DOWNLOADING = "ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...⏬"
     STATUS_CLONING = "ᴄʟᴏɴɪɴɢ...♻️"
     STATUS_WAITING = "Qᴜᴇᴜᴇᴅ...📝"
     STATUS_FAILED = "ꜰᴀɪʟᴇᴅ 🚫. ᴄʟᴇᴀɴɪɴɢ ᴅᴏᴡɴʟᴏᴀᴅ..."
@@ -112,10 +112,10 @@ def get_progress_bar_string(status):
     p = min(max(p, 0), 100)
     cFull = p // 8
     cPart = p % 8 - 1
-    p_str = '█' * cFull
+    p_str = '✦' * cFull
     if cPart >= 0:
         p_str += PROGRESS_INCOMPLETE[cPart]
-    p_str += ' ' * (PROGRESS_MAX_SIZE - cFull)
+    p_str += '✧' * (PROGRESS_MAX_SIZE - cFull)
     p_str = f"[{p_str}]"
     return p_str
 
@@ -135,7 +135,7 @@ def get_readable_message():
             INDEX += 1
             if INDEX > COUNT:
                 msg += f"<b>📁 ꜰɪʟᴇɴᴀᴍᴇ :</b> <code>{download.name()}</code>"
-                msg += f"\n<b>ℹ️ ꜱᴛᴀᴛᴜꜱ :</b> <i>{download.status()}</i>"
+                msg += f"\n<b>🔄 ꜱᴛᴀᴛᴜꜱ :</b> <i>{download.status()}</i>"
                 if download.status() not in [
                     MirrorStatus.STATUS_ARCHIVING,
                     MirrorStatus.STATUS_EXTRACTING,
@@ -148,7 +148,7 @@ def get_readable_message():
                     else:
                         msg += f"\n<b>📤 ᴜᴘʟᴏᴀᴅᴇᴅ :</b> {get_readable_file_size(download.processed_bytes())}<b>\n<b>⚙️ Engine: ʀᴄʟᴏɴᴇ</b>\n💾 Size</b>: {download.size()}"
                     msg += f"\n<b>⚡ ꜱᴘᴇᴇᴅ :</b> {download.speed()}" \
-                            f"\n<b>⏲️ ᴇᴛᴀ :</b> {download.eta()} "
+                            f"\n<b>⏳ ᴇᴛᴀ :</b> {download.eta()} "
                     # if hasattr(download, 'is_torrent'):
                     try:
                         msg += f"\n<b>👥 ᴜꜱᴇʀ :</b> <b>{download.message.from_user.first_name}</b>\n<b>⚠️ Warn:</b><code>/warn {download.message.from_user.id}</code>"
@@ -172,7 +172,7 @@ def get_readable_message():
                         msg += f"\n<b>⚙️ ᴇɴɢɪɴᴇ : Qbit</b>\n<b>🌍:</b> {download.torrent_info().num_leechs}"
                     except:
                         pass
-                    msg += f"\n<b>⛔ ᴛᴏ ꜱᴛᴏᴘ :</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
+                    msg += f"\n<b>🚫 ᴛᴏ ꜱᴛᴏᴘ :</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
                 msg += "\n\n"
                 if STATUS_LIMIT is not None and INDEX >= COUNT + STATUS_LIMIT:
                     break
