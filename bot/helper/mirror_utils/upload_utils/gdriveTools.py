@@ -391,9 +391,9 @@ class GoogleDriveHelper:
                     url = f'{INDEX_URL}/{url_path}/'
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = short_url(url)
-                        buttons.buildbutton("💡 ɪɴᴅᴇx ʟɪɴᴋ 💡", siurl)
+                        buttons.buildbutton("⚡ ɪɴᴅᴇx ʟɪɴᴋ ⚡", siurl)
                     else:
-                        buttons.buildbutton("💡 ɪɴᴅᴇx ʟɪɴᴋ 💡", url)
+                        buttons.buildbutton("⚡ ɪɴᴅᴇx ʟɪɴᴋ ⚡", url)
             else:
                 file = self.copyFile(meta.get('id'), parent_id)
                 msg += f'<b>🗂️ ꜰɪʟᴇɴᴀᴍᴇ : </b><code>{file.get("name")}</code>'
@@ -419,14 +419,14 @@ class GoogleDriveHelper:
                     urls = f'{INDEX_URL}/{url_path}?a=view'
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = short_url(url)
-                        buttons.buildbutton("💡 ɪɴᴅᴇx ʟɪɴᴋ 💡", siurl)
+                        buttons.buildbutton("⚡ ɪɴᴅᴇx ʟɪɴᴋ ⚡", siurl)
                         if VIEW_LINK:
                             siurls = short_url(urls)
-                            buttons.buildbutton("📖 ᴠɪᴇᴡ ʟɪɴᴋ 📖", siurls)
+                            buttons.buildbutton("👀 ᴠɪᴇᴡ ʟɪɴᴋ 👀", siurls)
                     else:
-                        buttons.buildbutton("💡 ɪɴᴅᴇx ʟɪɴᴋ 💡", url)
+                        buttons.buildbutton("⚡ ɪɴᴅᴇx ʟɪɴᴋ ⚡", url)
                         if VIEW_LINK:
-                            buttons.buildbutton("📖 ᴠɪᴇᴡ ʟɪɴᴋ 📖", urls)
+                            buttons.buildbutton("👀 ᴠɪᴇᴡ ʟɪɴᴋ 👀", urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
                 buttons.buildbutton(f"{BUTTON_FOUR_NAME}", f"{BUTTON_FOUR_URL}")
             if BUTTON_FIVE_NAME is not None and BUTTON_FIVE_URL is not None:
