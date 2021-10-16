@@ -577,9 +577,9 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
-                                 title = '💞 ᴘʀɪɪɪɪʏᴏ ᴍɪʀʀᴏʀʙᴏᴛ ꜱᴇᴀʀᴄʜ',
-                                 author_name='💓 ᴘʀɪɪɪɪʏᴏ ᴍɪʀʀᴏʀʙᴏᴛ',
-                                 author_url='https://github.com/PriiiiyoDevs/priiiiyo-mirrorbot',
+                                 title = 'Tony Mirror Bot Search',
+                                 author_name='💓 TONY LEECH+MIRROR',
+                                 author_url='https://t.me/tony_leech_zone',
                                  html_content=content)
         return
 
@@ -699,7 +699,7 @@ class GoogleDriveHelper:
             elif not response["files"]:
                 continue
             if not Title:
-                msg += f'<h4>✅ Search Result For: {fileName}</h4><br><br>'
+                msg += f'<h4>🔎 Search Result For: {fileName}</h4><br><br>'
                 Title = True
             if len(DRIVES_NAMES) > 1 and DRIVES_NAMES[index] is not None:
                 msg += f"╾────────────╼<br><b>{DRIVES_NAMES[index]}</b><br>╾────────────╼<br>"
@@ -720,9 +720,9 @@ class GoogleDriveHelper:
                         url = f'{INDEX_URLS[index]}/{url_path}/'
                         if SHORTENER is not None and SHORTENER_API is not None:
                             siurl = short_url(url)
-                            msg += f' <b>| <a href="{siurl}">💡 ɪɴᴅᴇx ʟɪɴᴋ 💡</a></b>'
+                            msg += f' <b>| <a href="{siurl}">⚡ ɪɴᴅᴇx ʟɪɴᴋ ⚡</a></b>'
                         else:
-                            msg += f' <b>| <a href="{url}">💡 ɪɴᴅᴇx ʟɪɴᴋ 💡</a></b>'
+                            msg += f' <b>| <a href="{url}">⚡ ɪɴᴅᴇx ʟɪɴᴋ ⚡</a></b>'
                 elif file.get('mimeType') == 'application/vnd.google-apps.shortcut':
                     msg += f"⁍<a href='https://drive.google.com/drive/folders/{file.get('id')}'>{file.get('name')}" \
                         f"</a> (shortcut)"
@@ -748,14 +748,14 @@ class GoogleDriveHelper:
                         urls = f'{INDEX_URLS[index]}/{url_path}?a=view'
                         if SHORTENER is not None and SHORTENER_API is not None:
                             siurl = short_url(url)
-                            msg += f' <b>| <a href="{siurl}">💡 ɪɴᴅᴇx ʟɪɴᴋ 💡</a></b>'
+                            msg += f' <b>| <a href="{siurl}">⚡ ɪɴᴅᴇx ʟɪɴᴋ ⚡</a></b>'
                             if VIEW_LINK:
                                 siurls = short_url(urls)
-                                msg += f' <b>| <a href="{siurls}">📖 ᴠɪᴇᴡ ʟɪɴᴋ 📖</a></b>'
+                                msg += f' <b>| <a href="{siurls}">👀 ᴠɪᴇᴡ ʟɪɴᴋ 👀</a></b>'
                         else:
-                            msg += f' <b>| <a href="{url}">💡 ɪɴᴅᴇx ʟɪɴᴋ 💡</a></b>'
+                            msg += f' <b>| <a href="{url}">⚡ ɪɴᴅᴇx ʟɪɴᴋ ⚡</a></b>'
                             if VIEW_LINK:
-                                msg += f' <b>| <a href="{urls}">📖 ᴠɪᴇᴡ ʟɪɴᴋ 📖</a></b>'
+                                msg += f' <b>| <a href="{urls}">👀 ᴠɪᴇᴡ ʟɪɴᴋ 👀</a></b>'
                 msg += '<br><br>'
                 content_count += 1
                 all_contents_count += 1
