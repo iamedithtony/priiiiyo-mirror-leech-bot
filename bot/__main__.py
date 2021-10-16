@@ -53,8 +53,8 @@ def stats(update, context):
 
 def start(update, context):
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Repo", "https://github.com/PriiiiyoDevs/priiiiyo-mirror-leech-bot")
-    buttons.buildbutton("Channel", "https://t.me/PriiiiyoMirrorUpdates")
+    buttons.buildbutton("Leech + Mirror", "https://https://t.me/joinchat/ldJmbDcnc8ExMjhl")
+    buttons.buildbutton("Channel", "https://https://t.me/Tony_Leech_Zone")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
@@ -64,7 +64,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
         sendMarkup(start_string, context.bot, update, reply_markup)
     else:
         sendMarkup(
-            'Oops! not a Authorized user.\nPlease deploy your own <b>priiiiyo-mirror-leech-bot</b>.',
+            'Join Below Group to use this Bot',
             context.bot,
             update,
             reply_markup,
@@ -156,9 +156,9 @@ help_string_telegraph = f'''<br>
 <b>/{BotCommands.StatsCommand}</b>: Show Stats of the machine the bot is hosted on
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
-        title='Priiiiyo Mirror Leech Help',
-        author_name='Priiiiyo Mirror Leech',
-        author_url='https://github.com/PriiiiyoDevs/priiiiyo-mirror-leech-bot',
+        title='TONY LEECH+MIRROR Help',
+        author_name='TONY LEECH+MIRROR',
+        author_url='https://https://t.me/Tony_Leech_Zone',
         html_content=help_string_telegraph,
     )["path"]
 
