@@ -774,9 +774,9 @@ class GoogleDriveHelper:
 
         for content in self.telegraph_content :
             self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                    title = '💞 ᴘʀɪɪɪɪʏᴏ ᴍɪʀʀᴏʀ ʟᴇᴇᴄʜ ʙᴏᴛ ꜱᴇᴀʀᴄʜ',
-                                                    author_name='💓 ᴘʀɪɪɪɪʏᴏ ᴍɪʀʀᴏʀ ʟᴇᴇᴄʜ ʙᴏᴛ',
-                                                    author_url='https://github.com/PriiiiyoDevs/priiiiyo-mirror-leech-bot',
+                                                    title = 'Tony Mirror Bot Search',
+                                                    author_name='💓 TONY LEECH+MIRROR',
+                                                    author_url='https://t.me/tony_leech_zone',
                                                     html_content=content
                                                     )['path'])
 
@@ -784,7 +784,7 @@ class GoogleDriveHelper:
         if self.num_of_path > 1:
             self.edit_telegraph()
 
-        msg = f"<b>✅ Found <code>{all_contents_count}</code> results for <code>{fileName}</code></b>"
+        msg = f"<b>🔎 Found <code>{all_contents_count}</code> results for <code>{fileName}</code></b>"
         buttons = button_build.ButtonMaker()
         buttons.buildbutton("🔎 ᴠɪᴇᴡ", f"https://telegra.ph/{self.path[0]}")
 
