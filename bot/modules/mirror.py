@@ -253,6 +253,11 @@ class MirrorListener(listeners.MirrorListeners):
                 msg += f'\n<b>📁 Files: </b><code>{files}</code>'
             else:
                 msg += f'\n<b>⚙️ Type: </b><code>{typ}</code>'
+                f' \n' \
+                f'📌 𝙹𝙾𝙸𝙽 𝙾𝚄𝚁 𝚃𝙴𝙰𝙼 𝙳𝚁𝙸𝚅𝙴 𝚃𝙾 𝙶𝙰𝙸𝙽 𝙰𝙲𝙲𝙴𝚂𝚂 𝚃𝙾 𝚃𝙷𝙴 𝙶𝙳𝚁𝙸𝚅𝙴 𝙻𝙸𝙽𝙺.\n' \
+                f'📌 𝙳𝙾 𝙽𝙾𝚃 𝚃𝙷𝙴 𝚂𝙷𝙰𝚁𝙴 𝙶-𝙳𝚁𝙸𝚅𝙴  / 𝙸𝙽𝙳𝙴𝚇 𝙻𝙸𝙽𝙺𝚂 𝙾𝚄𝚃𝚂𝙸𝙳𝙴 𝚃𝙷𝙴 𝙶𝚁𝙾𝚄𝙿.\n' \
+                f' \n' \ 
+                f'💫 POWERED BY @TONY_LEECH_ZONE
             buttons = button_build.ButtonMaker()
             if SHORTENER is not None and SHORTENER_API is not None:
                 surl = short_url(link)
@@ -267,21 +272,21 @@ class MirrorListener(listeners.MirrorListeners):
                     share_url += '/'
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = short_url(share_url)
-                        buttons.buildbutton("💡 ɪɴᴅᴇx ʟɪɴᴋ 💡", siurl)
+                        buttons.buildbutton("⚡ ɪɴᴅᴇx ʟɪɴᴋ ⚡", siurl)
                     else:
-                        buttons.buildbutton("💡 ɪɴᴅᴇx ʟɪɴᴋ 💡", share_url)
+                        buttons.buildbutton("⚡ ɪɴᴅᴇx ʟɪɴᴋ ⚡", share_url)
                 else:
                     share_urls = f'{INDEX_URL}/{url_path}?a=view'
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = short_url(share_url)
-                        buttons.buildbutton("💡 ɪɴᴅᴇx ʟɪɴᴋ 💡", siurl)
+                        buttons.buildbutton("⚡ ɪɴᴅᴇx ʟɪɴᴋ ⚡", siurl)
                         if VIEW_LINK:
                             siurls = short_url(share_urls)
-                            buttons.buildbutton("📖 ᴠɪᴇᴡ ʟɪɴᴋ 📖", siurls)
+                            buttons.buildbutton("👀 ᴠɪᴇᴡ ʟɪɴᴋ 👀", siurls)
                     else:
-                        buttons.buildbutton("💡 ɪɴᴅᴇx ʟɪɴᴋ 💡", share_url)
+                        buttons.buildbutton("⚡ ɪɴᴅᴇx ʟɪɴᴋ ⚡", share_url)
                         if VIEW_LINK:
-                            buttons.buildbutton("📖 ᴠɪᴇᴡ ʟɪɴᴋ 📖", share_urls)
+                            buttons.buildbutton("👀 ᴠɪᴇᴡ ʟɪɴᴋ 👀", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
                 buttons.buildbutton(f"{BUTTON_FOUR_NAME}", f"{BUTTON_FOUR_URL}")
             if BUTTON_FIVE_NAME is not None and BUTTON_FIVE_URL is not None:
@@ -293,7 +298,7 @@ class MirrorListener(listeners.MirrorListeners):
             else:
                 uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
             if uname is not None:
-                msg += f'\n\nRequested By: {uname}'
+                msg += f'\n\n👨🏽‍💻 Uploader: {uname}'
             try:
                 fs_utils.clean_download(download_dict[self.uid].path())
             except FileNotFoundError:
